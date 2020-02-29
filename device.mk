@@ -188,6 +188,10 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libgenlock \
     libtinyxml
+	
+# Doze mode
+PRODUCT_PACKAGES += \
+    XiaomiDoze	
 
 # DRM
 PRODUCT_PACKAGES += \
