@@ -102,6 +102,10 @@ dalvik.vm.heaptargetutilization=0.75 \
 dalvik.vm.heapminfree=6m \
 dalvik.vm.heapmaxfree=8m
 
+# Dex2oat
+PRODUCT_PRODUCT_PROPERTIES += \
+     dalvik.vm.dex2oat64.enabled=true
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
 debug.cpurend.vsync=false \
