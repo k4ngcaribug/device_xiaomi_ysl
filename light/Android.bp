@@ -25,7 +25,10 @@ cc_binary {
         "libhidltransport",
         "liblog",
         "libhwbinder",
-        "libutils",
         "android.hardware.light@2.0",
+    ],
+    static_libs: [
+        "libbase",
+        "libutils",
     ],
 }
