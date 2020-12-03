@@ -120,11 +120,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstdc++_vendor
 
-
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
+
+# Configstore
+PRODUCT_PACKAGES += \
+    disable_configstore
 
 # Display
 PRODUCT_PACKAGES += \
