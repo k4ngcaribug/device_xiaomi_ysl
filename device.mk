@@ -12,7 +12,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
 
 # APEX
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
@@ -325,6 +324,9 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0.vendor \
     librmnetctl \
     libxml2
+
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlay
 
 # Sensors
 PRODUCT_PACKAGES += \
