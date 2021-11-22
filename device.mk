@@ -336,6 +336,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# RetroMusic
+PRODUCT_PACKAGES += \
+    RetroMusic
+
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \

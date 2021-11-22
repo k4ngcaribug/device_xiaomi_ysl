@@ -99,6 +99,9 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
+# Bypass build time check on uses_libs until vendor fixes all their apps
+RELAX_USES_LIBRARY_CHECK := true
+
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_TS_MAKEUP := true
