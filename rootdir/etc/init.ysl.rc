@@ -62,6 +62,11 @@ on property:sys.fp.onstart=1
    setprop ro.boot.fpsensor gdx
    setprop ro.hardware.fingerprint goodix
    start vendor.fps_hal
+
+on property:sys.boot_completed=1
+    # Restrict permissions to socket file
+    # to hide Magisk & co.
+    chmod 0440 /proc/net/unix
    
 # Fingerprint Cleaning Script
 service goodix_script /vendor/bin/init.goodix.sh
