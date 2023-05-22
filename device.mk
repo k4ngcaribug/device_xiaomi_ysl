@@ -60,6 +60,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AntHalService
 
+# Prebuilt
+PRODUCT_PACKAGES += \
+    Camera
+
 # Device-specific Settings
 PRODUCT_PACKAGES += \
     XiaomiParts
