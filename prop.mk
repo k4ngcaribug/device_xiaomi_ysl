@@ -131,6 +131,10 @@ vendor.display.disable_skip_validate=1 \
 vendor.display.enable_default_color_mode=0 \
 vendor.gralloc.enable_fb_ubwc=1
 
+# Enable EGL image tracking on SF for b/137514000
+PRODUCT_PROPERTY_OVERRIDES += \
+debug.sf.enable_egl_image_tracker=1
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
 drm.service.enabled=true
