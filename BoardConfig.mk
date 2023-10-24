@@ -6,9 +6,6 @@
 
 DEVICE_PATH := device/xiaomi/ysl
 
-# APEX
-OVERRIDE_TARGET_FLATTEN_APEX := true
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
