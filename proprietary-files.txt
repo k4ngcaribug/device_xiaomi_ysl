@@ -834,7 +834,6 @@ vendor/lib64/libssd.so
 # Fingerprint
 vendor/lib/hw/fingerprint.default.so:vendor/lib/hw/fingerprint.goodix.default.so
 vendor/lib/hw/fingerprint.fpc.default.so
-vendor/lib/com.fingerprints.extension@1.0.so
 vendor/lib/libgf_ca.so
 vendor/lib/libgf_hal.so
 vendor/lib/libvendor.goodix.hardware.fingerprint@1.0-service.so

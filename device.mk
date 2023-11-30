@@ -165,6 +165,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi_msm8953-32
 
+PRODUCT_PACKAGES += \
+    com.fingerprints.extension@1.0.vendor
+
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
@@ -343,7 +346,8 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi
+    hardware/xiaomi \
+    vendor/fingerprint/opensource/interfaces
 
 # Telephony
 PRODUCT_PACKAGES += \
