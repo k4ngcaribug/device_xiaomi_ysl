@@ -39,6 +39,12 @@ BUILD_BROKEN_PHONY_TARGETS := true
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
+# ART
+ART_BUILD_TARGET_NDEBUG := true
+ART_BUILD_TARGET_DEBUG := false
+ART_BUILD_HOST_NDEBUG := true
+ART_BUILD_HOST_DEBUG := false
+
 # Kernel
 TARGET_KERNEL_CONFIG := ysl_defconfig
 BOARD_KERNEL_BASE := 0x80000000
@@ -227,6 +233,3 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # Inherit from the proprietary version
 -include vendor/xiaomi/ysl/BoardConfigVendor.mk
 -include vendor/xiaomi/msm8953-common/BoardConfigVendor.mk
-
-# OTA Assert
-TARGET_OTA_ASSERT_DEVICE := ysl,ysl-user,redmi s2,redmi y2
