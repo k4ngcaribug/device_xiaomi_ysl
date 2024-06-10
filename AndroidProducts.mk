@@ -14,9 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/rr_ysl.mk
-
-COMMON_LUNCH_CHOICES := \
-rr_ysl-user \
-rr_ysl-userdebug \
-rr_ysl-eng	
+     $(LOCAL_DIR)/qassa_ysl.mk
