@@ -574,6 +574,9 @@ vendor/lib/camera.device@3.2-impl.so
 vendor/lib/camera.device@3.3-impl.so
 vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so
 
+# DPM - from oneplus8 - qssi-user-11-RP1A.201005.001-2009051300-release-keys
+vendor/system_ext/lib64/libdpmframework.so|67ebd736333ae7158632735e3db06a4f9664f6a6
+
 # Display Calibration - from Ysl PKQ1.181203.001/V10.3.2.0.PEFCNXM
 vendor/etc/qdcm_calib_data_auo_ili7807d_hd720_video_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_shenchao_ili9881c_hd720p_video_mode_dsi_panel.xml
