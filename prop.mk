@@ -274,13 +274,10 @@ persist.vendor.usb.config.extra=none \
 persist.sys.usb.config.extra=none \
 persist.sys.usb.diag_mdlog_enable=false
 
-# USB debugging
+# VoLTE hax
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.sys.usb.config=mtp,adb \
-ro.adb.secure=0 \
-ro.secure=0 \
-ro.debuggable=1
-
+   persist.dbg.volte_avail_ovr=1 \
+   persist.dbg.vt_avail_ovr=1
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
