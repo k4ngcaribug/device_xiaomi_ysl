@@ -154,6 +154,10 @@ vendor.hw.fm.init=0
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 
+# Gboard
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.com.google.ime.kb_pad_port_b=1
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
 debug.stagefright.omx_default_rank.sw-audio=1 \
