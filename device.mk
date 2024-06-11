@@ -148,6 +148,10 @@ PRODUCT_PACKAGES += \
 # Charger
 include $(LOCAL_PATH)/rootdir/charger/charger.mk
 
+# GrapheneOS
+PRODUCT_PACKAGES += \
+    GrapheneOS
+
 # Consumerir
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
