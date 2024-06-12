@@ -28,9 +28,6 @@ $(call inherit-product, vendor/qassa/config/common_full_phone.mk)
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_BOOT_ANIMATION_RES := 720
 
-# Inherit from custom vendor
-$(call inherit-product, vendor/MiuiCamera/config.mk)
-
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ysl
 PRODUCT_NAME := qassa_ysl
