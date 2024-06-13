@@ -111,6 +111,7 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.provider@2.5 \
     camera.msm8953
 
 PRODUCT_PACKAGES += \
@@ -163,6 +164,9 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi_msm8953-32
+
+PRODUCT_PACKAGES += \
+    liblzma.vendor
 
 PRODUCT_PACKAGES += \
     com.fingerprints.extension@1.0.vendor \
@@ -219,6 +223,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libgui_shim \
     vendor.qti.hardware.camera.device@1.0
+
+PRODUCT_PACKAGES += \
+    libion.vendor
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -334,7 +341,10 @@ PRODUCT_PACKAGES += \
     libxml2
 
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlay
+    CarrierConfigOverlay \
+    libnetutils.vendor \
+    libsqlite.vendor \
+    libssl.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -342,6 +352,9 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
+
+PRODUCT_PACKAGES += \
+    libpower.vendor
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
