@@ -1283,5 +1283,4 @@ vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 
 # Wi-Fi
-vendor/bin/wcnss_service
 vendor/bin/hw/wpa_supplicant
