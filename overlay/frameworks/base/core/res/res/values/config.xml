@@ -646,11 +646,6 @@
     <integer name="config_sysCPUTempMultiplier">1000</integer>
     <integer name="config_sysBatteryTempMultiplier">10</integer>
 
-    <!-- Smart charge sysfs node and value for suspend/resume charging-->
-    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/battery_charging_enabled</string>
-    <string name="config_SmartChargingSupspendValue" translatable="false">0</string>
-    <string name="config_SmartChargingResumeValue" translatable="false">1</string>
-
     <!-- The list of components which should be automatically disabled for a specific device. -->
     <string-array name="config_deviceDisabledComponents" translatable="false">
         <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
@@ -701,4 +696,9 @@
     <!-- Qassa Music Lyrics -->
     <bool name="config_enable_statusbar_lyric">true</bool>
 
+    <!-- Smart charging -->
+    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/charging_enabled</string>
+    <string name="config_SmartChargingSupspendValue" translatable="false">0</string>
+    <string name="config_SmartChargingResumeValue" translatable="false">1</string>
+    <bool name="config_smartChargingAvailable">true</bool>
 </resources>

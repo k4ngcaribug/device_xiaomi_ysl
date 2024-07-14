@@ -7,3 +7,8 @@ allow system_server app_zygote:process getpgid;
 allow system_server sysfs_rtc:file r_file_perms;
 allow system_server mm-qcamerad:binder call;
 
+# smart charging
+allow system_server sysfs_battery_supply:file { getattr open read write };
+r_dir_file(untrusted_app, sysfs_battery_supply)
+r_dir_file(untrusted_app, sysfs_usb_supply)
+allow system_server sysfs_usb_supply:file { getattr open read write };
