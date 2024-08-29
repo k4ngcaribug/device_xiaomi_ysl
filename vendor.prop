@@ -190,7 +190,7 @@ vendor.service.qti.ims.enabled=1
 
 # SoC
 ro.soc.manufacturer=Qualcomm
-ro.soc.model=SDM450
+ro.soc.model=MSM8953
 
 # Time Services
 persist.timed.enable=true
