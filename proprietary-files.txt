@@ -1252,12 +1252,12 @@ vendor/lib64/sensors.ssc.so
 # Sensors configs
 vendor/etc/sensors/sensor_def_qcomdev.conf
 
-# Thermal
-vendor/bin/thermal-engine
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalfeature.so
-vendor/lib64/libthermalioctl.so
+# Thermal - from Onclite QKQ1.191008.001/V12.5.3.0.QFLCNXM
+vendor/bin/thermal-engine|a8bc9bb1ed717c886316dd42b8af0ebb59b2bbec
+-vendor/lib/libthermalclient.so|a18540af4380aab3d6e6e880241b0c74c7967c0b
+-vendor/lib64/libthermalclient.so|b2a90496eb99301cc0f065fe97782358858668a3
+vendor/lib/libthermalfeature.so|13c27adf6e6ce8728854542c3ed8f3d12ade5615
+vendor/lib64/libthermalfeature.so|1c408911610e5b6a11853aff1900860f9e9a861f
 
 # Time services
 vendor/app/TimeService/TimeService.apk
