@@ -93,6 +93,15 @@ function blob_fixup() {
         vendor/lib64/libwvhidl.so)
             "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
             ;;
+	vendor/lib/libarcsoft_high_dynamic_range.so)
+            ;&
+        vendor/lib/libremosaic_wrapper.so)
+            ;&
+        vendor/lib/libremosaiclib.so)
+            ;&
+        vendor/lib/libmmcamera_hdr_gb_lib.so)
+            "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            ;;
     esac
 }
 
