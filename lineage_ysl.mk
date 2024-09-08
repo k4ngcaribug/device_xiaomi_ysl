@@ -17,10 +17,14 @@ $(call inherit-product, device/xiaomi/ysl/device.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Signed
--include vendor/extra/product.mk
+-include vendor/lineage-priv/keys/keys.mk
 
 # Flags
 TARGET_BOOT_ANIMATION_RES := 720
+EVEREST_MAINTAINER := "AL"
+TARGET_SUPPORTS_BLUR := true
+WITH_GAPPS := false
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ysl
