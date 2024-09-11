@@ -10,3 +10,8 @@ persist.dbg.wfc_avail_ovr=1
 persist.radio.data_con_rprt=1
 persist.radio.calls.on.ims=1
 persist.radio.VT_ENABLE=1
+
+# Hardware Description
+ro.device.chipset=Qualcomm Snapdragon™625
+ro.device.display_resolution=5.99" IPS LCD 720x1440
+ro.device.colorbody_phone=Graphite Gray
