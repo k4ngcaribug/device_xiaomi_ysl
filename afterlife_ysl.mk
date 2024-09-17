@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017-2021 The LineageOS Project
+# Copyright (C) 2024 The AfterlifeOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -13,22 +13,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Inherit from ysl device
 $(call inherit-product, device/xiaomi/ysl/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AfterlifeOS stuff.
+$(call inherit-product, vendor/afterlife/config/common_full_phone.mk)
 
 # Signed
 -include vendor/lineage-priv/keys/keys.mk
 
-# Flags
+# Afterlife flags
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := false
 TARGET_BOOT_ANIMATION_RES := 720
-EVEREST_MAINTAINER := "AL"
+AFTERLIFE_MAINTAINER := AL
+USE_PIXEL_CHARGING := true
+TARGET_SUPPORTS_TOUCHGESTURES := true
 TARGET_SUPPORTS_BLUR := true
-WITH_GAPPS := false
-TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ysl
-PRODUCT_NAME := lineage_ysl
+PRODUCT_NAME := afterlife_ysl
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi S2
