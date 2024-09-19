@@ -3,7 +3,7 @@
 #
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-af.fast_track_multiplier=1 \
+af.fast_track_multiplier=2 \
 audio.deep_buffer.media=true \
 audio.offload.min.duration.secs=30 \
 audio.offload.video=true \
@@ -17,7 +17,6 @@ persist.vendor.audio.fluence.voicerec=false \
 persist.vendor.audio.hw.binder.size_kbyte=1024 \
 persist.vendor.audio.speaker.prot.enable=false \
 ro.af.client_heap_size_kbyte=7168 \
-ro.audio.soundfx.dirac=true \
 ro.vendor.audio.sdk.fluencetype=fluence \
 ro.vendor.audio.sdk.ssr=false \
 ro.vendor.audio.sos=true \
@@ -50,8 +49,8 @@ vendor.voice.voip.conc.disabled=true
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-filter=speed \
-    dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.dex2oat-filter=speed \
+dalvik.vm.image-dex2oat-filter=speed
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -62,7 +61,7 @@ ro.qualcomm.bt.hci_transport=smd
 
 # Boot
 PRODUCT_PROPERTY_OVERRIDES += \
-    sys.vendor.shutdown.waittime=500
+sys.vendor.shutdown.waittime=500
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -104,7 +103,7 @@ dalvik.vm.heapmaxfree=8m
 
 # Dex2oat
 PRODUCT_PRODUCT_PROPERTIES += \
-     dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.dex2oat64.enabled=true
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -113,29 +112,26 @@ debug.egl.hw=1 \
 debug.enable.sglscale=1 \
 debug.gralloc.enable_fb_ubwc=1 \
 debug.hwui.renderer=skiagl \
+debug.hwui.skia_atrace_enabled=false \
 debug.mdpcomp.logs=0 \
 debug.sf.enable_hwc_vds=1 \
 debug.sf.hw=1 \
-debug.sf.latch_unsignaled=1 \
+debug.sf.latch_unsignaled=0 \
 debug.sf.recomputecrop=0 \
 dev.pm.dyn_samplingrate=1 \
 persist.demo.hdmirotationlock=false \
-persist.hwc.enable_vds=1 \
 persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
-ro.qualcomm.cabl=0 \
-ro.sf.lcd_density=320 \
+ro.sf.lcd_density=280 \
 debug.sdm.support_writeback=0 \
 debug.sf.disable_backpressure=1 \
 ro.vendor.display.cabl=2 \
 sdm.debug.disable_skip_validate=1 \
 vendor.display.disable_skip_validate=1 \
-vendor.display.enable_default_color_mode=0 \
-vendor.gralloc.enable_fb_ubwc=1
-
-# Enable EGL image tracking on SF for b/137514000
-PRODUCT_PROPERTY_OVERRIDES += \
-debug.sf.enable_egl_image_tracker=1
+vendor.display.disable_partial_split=1 \
+vendor.display.disable_scaler=1 \
+vendor.display.enable_default_color_mode=1 \
+vendor.gralloc.enable_fb_ubwc=
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -154,10 +150,6 @@ vendor.hw.fm.init=0
 # Frp
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.frp.pst=/dev/block/bootdevice/by-name/config
-
-# Gboard
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.com.google.ime.kb_pad_port_b=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -180,13 +172,11 @@ vendor.video.disable.ubwc=1
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.vendor.extension_library=libqti-perfd-client.so \
-ro.vendor.qti.sys.fw.bservice_enable=true \
-ro.sys.fw.dex2oat_thread_count=8 
+ro.vendor.extension_library=libqti-perfd-client.so
 
 #QTI Performance
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.vendor.qti.va_aosp.support=1 
+ro.vendor.qti.va_aosp.support=1
 
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -255,19 +245,11 @@ persist.rcs.supported=1
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 ro.surface_flinger.protected_contents=true
-    
+
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.timed.enable=true \
 persist.delta_time.enable=true
-
-# Tcp
-PRODUCT_PROPERTY_OVERRIDES += \
-net.tcp.2g_init_rwnd=10
-
-# UI
-PRODUCT_PROPERTY_OVERRIDES += \
-sys.use_fifo_ui=1
 
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -277,8 +259,8 @@ persist.sys.usb.diag_mdlog_enable=false
 
 # VoLTE hax
 PRODUCT_PROPERTY_OVERRIDES += \
-   persist.dbg.volte_avail_ovr=1 \
-   persist.dbg.vt_avail_ovr=1
+persist.dbg.volte_avail_ovr=1 \
+persist.dbg.vt_avail_ovr=1
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \

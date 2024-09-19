@@ -1,5 +1,6 @@
 /*
    Copyright (c) 2016, The CyanogenMod Project
+   Copyright (c) 2019-2020, The LineageOS Project
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -25,35 +26,42 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <fcntl.h>
-#include <stdlib.h>
+#include <string.h>
 #include <sys/sysinfo.h>
+#include <unistd.h>
+#include <cstdlib>
+#include <fstream>
+#include <vector>
 
-#include "vendor_init.h"
+#include <android-base/properties.h>
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
+
 #include "property_service.h"
-#include "log/log.h"
+#include "vendor_init.h"
 
-char const *heapgrowthlimit;
-char const *heapminfree;
-
+using android::base::GetProperty;
 using android::init::property_set;
+using std::string;
 
-void check_device()
-{
-    struct sysinfo sys;
+std::vector<std::string> ro_props_default_source_order = {
+        "", "odm.", "product.", "system.", "system_ext.", "vendor.",
+};
 
-    sysinfo(&sys);
+char const *heaptargetutilization;
+char const *heapminfree;
+char const *heapmaxfree;
 
-    if (sys.totalram > 3072ull * 1024 * 1024) {
-        // from - Stock rom
-        heapgrowthlimit = "256m";
-        heapminfree = "4m";
-    } else {
-        // from - phone-xxhdpi-2048-dalvik-heap.mk
-        heapgrowthlimit = "192m";
-        heapminfree = "2m";
-   }
+void property_override(char const prop[], char const value[], bool add = true) {
+    auto pi = (prop_info*)__system_property_find(prop);
+
+    if (pi != nullptr) {
+        __system_property_update(pi, value, strlen(value));
+    } else if (add) {
+        __system_property_add(prop, strlen(prop), value, strlen(value));
+    }
 }
+
 void set_avoid_gfxaccel_config() {
     struct sysinfo sys;
     sysinfo(&sys);
@@ -64,15 +72,26 @@ void set_avoid_gfxaccel_config() {
     }
 }
 
-void vendor_load_properties()
-{
-    check_device();
-	set_avoid_gfxaccel_config();
+void set_dalvik_props() {
+    struct sysinfo sys;
 
-    property_set("dalvik.vm.heapstartsize", "16m");
-    property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
-    property_set("dalvik.vm.heapsize", "512m");
-    property_set("dalvik.vm.heaptargetutilization", "0.75");
-    property_set("dalvik.vm.heapminfree", heapminfree);
-    property_set("dalvik.vm.heapmaxfree", "8m");
+    sysinfo(&sys);
+    if (sys.totalram > 2048ull * 1024 * 1024) {
+        // from phone-xhdpi-4096-dalvik-heap.mk
+        heaptargetutilization = "0.6";
+        heapminfree = "8m";
+        heapmaxfree = "16m";
+    } else {
+        // from phone-xhdpi-2048-dalvik-heap.mk
+        heaptargetutilization = "0.75";
+        heapminfree = "512k";
+        heapmaxfree = "8m";
+   }
+
+    property_override("dalvik.vm.heapstartsize", "8m");
+    property_override("dalvik.vm.heapgrowthlimit", "192m");
+    property_override("dalvik.vm.heapsize", "512m");
+    property_override("dalvik.vm.heaptargetutilization", heaptargetutilization);
+    property_override("dalvik.vm.heapminfree", heapminfree);
+    property_override("dalvik.vm.heapmaxfree", heapmaxfree);
 }
