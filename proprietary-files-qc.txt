@@ -169,6 +169,9 @@ vendor/lib64/libdpmqmihal.so|4254cc9f10f6f3d990958c17f4e43d8e9e09c382
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so|658b574dc31f2f7f87e52c75c9564d59bed8873f
 vendor/lib/libdpmqmihal.so|150b719f2a33ed70cd50e5f6d6ccad8ea3c34eea
 
+# DPM - from oneplus8 - qssi-user-11-RP1A.201005.001-2009051300-release-keys
+vendor/product/lib64/libdpmframework.so|67ebd736333ae7158632735e3db06a4f9664f6a6
+
 # DRM - From Tissot PKQ1.180917.001/V10.0.12.0.PDHMIXM
 vendor/bin/qseecomd|8ba233a028eec55d2f57ed7c85c6751e8f5c5d16
 vendor/lib/libQSEEComAPI.so|3a4de1c673d0e196c553fbfcec0ee4a3275915af
