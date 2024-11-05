@@ -24,6 +24,9 @@ $(call inherit-product, device/xiaomi/ysl/device.mk)
 # Inherit some common QAssa stuff.
 $(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
 
+# Signed
+-include vendor/extra/product.mk
+
 # Qassa flags
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_BOOT_ANIMATION_RES := 720
