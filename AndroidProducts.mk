@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/nad_ysl.mk
+     $(LOCAL_DIR)/qassa_ysl.mk
